@@ -4,8 +4,6 @@ const logger = require("morgan")
 const PORT = process.env.PORT || 8080;
 const app = express();
 const router = express.Router();
-const axios = require("axios");
-const cheerio = require("cheerio");
 const db = require("./models");
 
 app.use(express.urlencoded({ extended: true }));

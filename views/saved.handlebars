@@ -24,43 +24,30 @@
   </div>
 </div>
 <div class="container">
-  <div class="modal fade" id="add-articles" tabindex="-1" role="dialog" aria-labelledby="add-articles-label"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="add-articles-label">Loading...</h5>
-        </div>
-      </div>
+   <div class="col-md-12">
+        {{#if article}}
+            {{#each article}}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>{{this.title}}</h4>
+                    </div>
+                    <div class="panel-body">
+                        <a href={{this.link}} target="_blank">{{this.link}}</a>
+                             <br><br>
+                        <button type="button" class="btn btn-success addNote" data-id={{this._id}}>Add a Note</button>
+                        <button type="button" class="btn btn-danger delete" data-id={{this._id}}>Delete</button>
+                        <div id="notes">
+                       {{#if Note}}
+                      {{#each Note}}
+                      </div>
+                    </div>
+                    {{/each}}
+                    {{/if}}
+                </div>
+            {{/each}}
+        {{else}}
+        {{/if}}
     </div>
-  </div>
-  <div class="modal fade" id="add-note" tabindex="-1" role="dialog" aria-labelledby="add-note-label" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="add-note-label"></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="container">
-            <div class="mb-3" id="note-list" style="height: auto;">
-            </div>
-            <form action="">
-              <div class="form-group">
-                <textarea class="border-dark" name="note" id="note" cols="52" rows="5"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary" id="save-note">Save Note</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="container" id="saved-articles">
-</div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/assets/javascript/saved.js"></script>
+<script src="/assets/javascript/app.js"></script>
