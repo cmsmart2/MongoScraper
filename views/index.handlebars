@@ -12,7 +12,7 @@
         <a class="nav-link" href="/saved">Saved Articles</a>
       </li>
       <li class="nav-item">
-        <a class="btn btn-danger scrape-new">Scrape New Articles</a>
+        <a class="btn btn-danger scrape-new" id="scrape" data-toggle="modal" data-target="#add-articles">Scrape New Articles</a>
       </li>
     </ul> 
   </div>
@@ -20,11 +20,50 @@
 <div class="jumbotron jumbotron-fluid text-center">
   <div class="container">
     <h1 class="display-4">Mongo Scraper</h1>
-    <p class="lead">New York Times Edition</p>
+    <p class="lead">My Subscription Addiction</p>
   </div>
 </div>
-<div id="articles"></div>
-  <div id="notes"></div>
+<div class="container">
+  <div class="modal fade" id="add-articles" tabindex="-1" role="dialog" aria-labelledby="add-articles-label"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="add-articles-label">Loading...</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="add-note" tabindex="-1" role="dialog" aria-labelledby="add-note-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="add-note-label"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
 
-<script src="/public/assets/javascript/app.js"></script>
-<script src="../public/assets/javascript/index.js"></script>
+          <div class="container">
+            <div class="mb-3" id="note-list" style="height: auto;">
+            </div>
+            <form action="">
+              <div class="form-group">
+                <textarea class="border-dark" name="note" id="note" cols="52" rows="5"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" id="save-note">Save Note</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="articles">
+
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/assets/javascript/app.js"></script>
