@@ -1,0 +1,12 @@
+.jumbotron {
+    background: rgb(143,185,198);
+    background: linear-gradient(6deg, rgba(143,185,198,1) 35%, rgba(218,237,255,1) 51%);
+}
+
+body {
+    background: url("../images/tree.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
